@@ -43,6 +43,12 @@ public class ApplicantController {
         return new ResponseEntity<>(app,HttpStatus.OK);
     }
 
+    @GetMapping("/getCredientials/{email}")
+    public ResponseEntity<List<Applicant>> getCredientials(@PathVariable("email") String email){
+        List<Applicant> applicant = applicantRepo.getCredentials(email);
+        return new ResponseEntity<>(applicant,HttpStatus.OK);
+
+    }
 
 
 

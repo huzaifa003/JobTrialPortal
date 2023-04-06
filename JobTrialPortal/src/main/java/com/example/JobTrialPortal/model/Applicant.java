@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
+@Entity(name = "applicant")
 @Table(name = "applicant")
 public class Applicant {
 
@@ -16,13 +16,13 @@ public class Applicant {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long a_id;
 
-    @Column(name = "a_email")
+    @Column(name = "a_email",unique = true,nullable = false)
     private String a_email;
 
-    @Column(name = "a_password")
+    @Column(name = "a_password",nullable = false)
     private String a_password;
 
-    @Column(name = "a_username")
+    @Column(name = "a_username",nullable = false)
     private String a_username;
 
     @Column(name = "a_description")
